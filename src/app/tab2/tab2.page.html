@@ -1,9 +1,26 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Championship
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-list>
+    <ion-radio-group>
+      <ion-list-header>
+        <ion-label>Serie Disponibili</ion-label>
+      </ion-list-header>
+
+      <ion-item *ngFor="let letter of letters">
+        <ion-label>Serie {{letter}}</ion-label>
+        <ion-radio
+          slot="start"
+          value="biff"
+          (click)="goToDetail(letter)"
+        ></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>

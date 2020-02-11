@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Groups</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-button routerLink="/" routerDirection="backward">Back</ion-button> -->
+  <ion-list-header
+    >Adjust Display
+    <ion-toggle
+      color="warning"
+      (ionChange)="this.showIt=!this.showIt"
+    ></ion-toggle>
+  </ion-list-header>
+
+  <ion-item [hidden]="showIt">
+    <ion-range color="danger" pin="true" (ionChange)="changeBrightness()">
+      <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+      <ion-icon size="large" slot="end" name="sunny"></ion-icon>
+    </ion-range>
+  </ion-item>
+  <ion-card
+    class="subject-card"
+    *ngFor=" let subject of subjects; let i = index"
+  >
+    <ion-card-header>
+      <ion-card-subtitle>{{i+1}}° Subject</ion-card-subtitle>
+      <ion-card-title>{{subject.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{subject.hours}} hours</p>
+    </ion-card-content>
+    <ion-button (click)="goToDetails(subject._id)" routerDirection="forward"
+      >Info</ion-button
+    >
+  </ion-card>
+</ion-content>

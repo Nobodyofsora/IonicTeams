@@ -1,0 +1,8 @@
+<ion-list>
+  <ion-item *ngFor="let team of teams">
+    <ion-label
+      >{{ team.id }}° - {{ team.country }} {{ team.games_played }}
+      {{ team.wins }}:{{ team.losses }} {{ team.points }}
+    </ion-label>
+  </ion-item>
+</ion-list>

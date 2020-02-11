@@ -38,6 +38,10 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'groups',
+        loadChildren: () => import('../groups/groups.module').then(m => m.GroupsPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
@@ -55,4 +59,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

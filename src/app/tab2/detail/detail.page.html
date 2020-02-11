@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment
+    (ionChange)="segmentChanged()"
+    [(ngModel)]="segment"
+    color="danger"
+  >
+    <ion-segment-button value="0">
+      <ion-label>Placements</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="1">
+      <ion-label>Results</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="true">
+    <ion-slide>
+      <app-placement [teams]="placements"></app-placement>
+    </ion-slide>
+    <ion-slide>
+      <app-results></app-results>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
